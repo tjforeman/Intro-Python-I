@@ -22,3 +22,19 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+date = datetime.now()
+
+user_input = input("Enter the month then year seperated by a comma: ").split(',')
+
+if len(user_input) == 0:
+  print(calendar.month(date.year,date.month))
+
+if len(user_input) == 1:
+  print(calendar.month(date.year,int(user_input[0])))
+  
+if len(user_input) == 2:
+  print(calendar.month(int(user_input[1]),int(user_input[0])))
+
+else:
+   print("please enter the month then the year seperated by a comma")
